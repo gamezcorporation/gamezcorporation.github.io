@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<title>Chekash – Escáner de precios en dólares y bolívares</title>
+<meta name="description" content="Chekash escanea precios con la cámara y los convierte entre dólares y bolívares con la tasa BCV. Lleva tu lista, presupuesto e historial de compras.">
+<style>
+:root{--g:#2fb100;--g2:#39c900;--g1:#68ed24;--bg:#fff;--bg2:#f3f8f5;--tx:#10231a;--mu:#52665b;--bd:#dbe7e0}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1511;--bg2:#141f19;--tx:#eaf4ee;--mu:#9bb0a4;--bd:#25352c}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+.logo img{width:36px;height:36px;border-radius:10px}
+nav a{color:var(--mu);text-decoration:none;margin-left:18px;font-size:.95rem}
+nav a:hover{color:var(--g)}
+.hero{background:linear-gradient(135deg,var(--g1),var(--g2));color:#0d1f12;border-radius:24px;padding:56px 28px;text-align:center;margin-top:8px}
+.hero img{width:104px;height:104px;border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.25);margin-bottom:20px}
+.hero h1{margin:0 0 12px;font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;letter-spacing:-.02em}
+.hero p{margin:0 auto 24px;max-width:560px;font-size:1.1rem;opacity:.95}
+.badge{display:inline-block;background:#0d1f12;color:#fff;font-weight:700;padding:12px 24px;border-radius:999px}
+h2{font-size:1.5rem;margin:56px 0 20px;letter-spacing:-.01em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;padding:22px}
+.card h3{margin:0 0 6px;font-size:1.05rem}
+.card h3::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--g2);margin-right:8px}
+.card p{margin:0;color:var(--mu);font-size:.95rem}
+.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:12px}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
+.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--g2);color:#0d1f12;font-weight:700;display:grid;place-items:center}
+.legal{display:flex;flex-wrap:wrap;gap:12px}
+.legal a{border:1px solid var(--bd);border-radius:12px;padding:10px 18px;color:var(--tx);text-decoration:none;background:var(--bg2)}
+.legal a:hover{border-color:var(--g);color:var(--g)}
+footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--bd);color:var(--mu);font-size:.9rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="w">
+  <nav>
+    <div class="logo"><img src="/logo.svg" alt="Logo de Chekash">Chekash</div>
+    <div><a href="#funciones">Funciones</a><a href="#como">Cómo funciona</a><a href="#legal">Legal</a></div>
+  </nav>
+
+  <header class="hero">
+    <img src="/logo.svg" alt="Ícono de Chekash">
+    <h1>Sabe cuánto pagas, en dólares y en bolívares</h1>
+    <p>Apunta la cámara al precio, Chekash lo lee y lo convierte al instante con la tasa BCV. Compra con el presupuesto bajo control.</p>
+    <span class="badge">Próximamente en Google Play</span>
+  </header>
+
+  <h2 id="funciones">Lo que hace Chekash</h2>
+  <div class="grid">
+    <div class="card"><h3>Escáner de precios</h3><p>Lee el precio de la etiqueta con la cámara, sin escribir nada.</p></div>
+    <div class="card"><h3>Dólar y bolívar</h3><p>Conversión automática con la tasa oficial del BCV.</p></div>
+    <div class="card"><h3>Mi lista</h3><p>Ve sumando lo que llevas mientras recorres el supermercado.</p></div>
+    <div class="card"><h3>Presupuesto</h3><p>Define un tope y mira cuánto te queda antes de llegar a la caja.</p></div>
+    <div class="card"><h3>Historial</h3><p>Guarda tus compras anteriores para comparar y planificar.</p></div>
+  </div>
+
+  <h2 id="como">Cómo funciona</h2>
+  <ol class="steps">
+    <li><div><strong>Escanea</strong><br><span style="color:var(--mu)">Apunta la cámara al precio del producto.</span></div></li>
+    <li><div><strong>Convierte</strong><br><span style="color:var(--mu)">Chekash muestra el monto en dólares y en bolívares.</span></div></li>
+    <li><div><strong>Suma y decide</strong><br><span style="color:var(--mu)">Agrégalo a tu lista y compara con tu presupuesto.</span></div></li>
+  </ol>
+
+  <h2 id="legal">Información legal</h2>
+  <div class="legal">
+    <a href="/Chekash/privacy-policy.html">Política de privacidad</a>
+    <a href="/Chekash/terminos-de-uso.html">Términos de uso</a>
+  </div>
+
+  <h2>Contacto</h2>
+  <p>¿Dudas o sugerencias? Escríbenos a <a href="mailto:appchekash@gmail.com" style="color:var(--g)">appchekash@gmail.com</a>.</p>
+
+  <footer>© 2026 Gamez Corporation · Chekash</footer>
+</div>
+</body>
+</html>
