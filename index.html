@@ -3,80 +3,250 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/svg+xml" href="/logo.svg">
-<title>Chekash – Escáner de precios en dólares y bolívares</title>
-<meta name="description" content="Chekash escanea precios con la cámara y los convierte entre dólares y bolívares con la tasa BCV. Lleva tu lista, presupuesto e historial de compras.">
-<style>
-:root{--g:#2fb100;--g2:#39c900;--g1:#68ed24;--bg:#fff;--bg2:#f3f8f5;--tx:#10231a;--mu:#52665b;--bd:#dbe7e0}
-@media (prefers-color-scheme:dark){:root{--bg:#0d1511;--bg2:#141f19;--tx:#eaf4ee;--mu:#9bb0a4;--bd:#25352c}}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
-.w{max-width:960px;margin:0 auto;padding:0 20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
-.logo img{width:36px;height:36px;border-radius:10px}
-nav a{color:var(--mu);text-decoration:none;margin-left:18px;font-size:.95rem}
-nav a:hover{color:var(--g)}
-.hero{background:linear-gradient(135deg,var(--g1),var(--g2));color:#0d1f12;border-radius:24px;padding:56px 28px;text-align:center;margin-top:8px}
-.hero img{width:104px;height:104px;border-radius:26px;box-shadow:0 10px 30px rgba(0,0,0,.25);margin-bottom:20px}
-.hero h1{margin:0 0 12px;font-size:clamp(1.9rem,5vw,3rem);line-height:1.15;letter-spacing:-.02em}
-.hero p{margin:0 auto 24px;max-width:560px;font-size:1.1rem;opacity:.95}
-.badge{display:inline-block;background:#0d1f12;color:#fff;font-weight:700;padding:12px 24px;border-radius:999px}
-h2{font-size:1.5rem;margin:56px 0 20px;letter-spacing:-.01em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
-.card{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;padding:22px}
-.card h3{margin:0 0 6px;font-size:1.05rem}
-.card h3::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--g2);margin-right:8px}
-.card p{margin:0;color:var(--mu);font-size:.95rem}
-.steps{counter-reset:s;list-style:none;padding:0;display:grid;gap:12px}
-.steps li{counter-increment:s;display:flex;gap:14px;align-items:flex-start}
-.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--g2);color:#0d1f12;font-weight:700;display:grid;place-items:center}
-.legal{display:flex;flex-wrap:wrap;gap:12px}
-.legal a{border:1px solid var(--bd);border-radius:12px;padding:10px 18px;color:var(--tx);text-decoration:none;background:var(--bg2)}
-.legal a:hover{border-color:var(--g);color:var(--g)}
-footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--bd);color:var(--mu);font-size:.9rem;text-align:center}
-</style>
+<title>Chekash: escáner de precios en dólares, euros y bolívares</title>
+<meta name="description" content="Apunta la cámara al precio y Chekash lo lee y lo suma en dólares, euros y bolívares con la tasa del BCV. Lista de mercado, presupuesto e historial. Para Android.">
+<meta name="theme-color" content="#0A2515">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/outfit-bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fonts/outfit-regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="assets/site.css"><link rel="stylesheet" href="assets/home.css">
+<script>document.documentElement.classList.add('js')</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chekash: escáner de precios en dólares, euros y bolívares">
+<meta property="og:description" content="Apunta al precio. Sabe cuánto pagas.">
+<meta property="og:url" content="https://gamezcorporation.github.io/">
+<meta property="og:image" content="https://gamezcorporation.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Chekash","applicationCategory":"FinanceApplication","operatingSystem":"Android","description":"Escáner de precios que suma tu compra en dólares, euros y bolívares con la tasa del BCV.","offers":[{"@type":"Offer","price":"0","priceCurrency":"USD","description":"Plan gratis con anuncios"},{"@type":"Offer","price":"2.99","priceCurrency":"USD","description":"Chekash Premium, mensual"},{"@type":"Offer","price":"19.99","priceCurrency":"USD","description":"Chekash Premium, anual"}],"inLanguage":"es","publisher":{"@type":"Organization","name":"Gámez Dev"}}</script>
 </head>
 <body>
-<div class="w">
-  <nav>
-    <div class="logo"><img src="/logo.svg" alt="Logo de Chekash">Chekash</div>
-    <div><a href="#funciones">Funciones</a><a href="#como">Cómo funciona</a><a href="#legal">Legal</a></div>
-  </nav>
-
-  <header class="hero">
-    <img src="/logo.svg" alt="Ícono de Chekash">
-    <h1>Sabe cuánto pagas, en dólares y en bolívares</h1>
-    <p>Apunta la cámara al precio, Chekash lo lee y lo convierte al instante con la tasa BCV. Compra con el presupuesto bajo control.</p>
-    <span class="badge">Próximamente en Google Play</span>
-  </header>
-
-  <h2 id="funciones">Lo que hace Chekash</h2>
-  <div class="grid">
-    <div class="card"><h3>Escáner de precios</h3><p>Lee el precio de la etiqueta con la cámara, sin escribir nada.</p></div>
-    <div class="card"><h3>Dólar y bolívar</h3><p>Conversión automática con la tasa oficial del BCV.</p></div>
-    <div class="card"><h3>Mi lista</h3><p>Ve sumando lo que llevas mientras recorres el supermercado.</p></div>
-    <div class="card"><h3>Presupuesto</h3><p>Define un tope y mira cuánto te queda antes de llegar a la caja.</p></div>
-    <div class="card"><h3>Historial</h3><p>Guarda tus compras anteriores para comparar y planificar.</p></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs><linearGradient id="lg" x1="0" y1="0" x2="260" y2="260" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#68ED24"/><stop offset="1" stop-color="#39C900"/></linearGradient></defs>
+<symbol id="logo" viewBox="0 0 260 260"><rect width="260" height="260" rx="58" fill="url(#lg)"/><path d="M77 53H177V220L160 204L143 220L126 204L109 220L92 204L77 220Z" fill="#fff"/><rect x="103" y="77" width="47" height="11" rx="5.5" fill="#d0d0ca"/><path d="M96 135L125 163L185 91" fill="none" stroke="#101b16" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/><circle cx="190" cy="84" r="35" fill="#ffca28"/><circle cx="190" cy="84" r="29.25" fill="#ffca28" stroke="#e9b41d" stroke-width="1.5"/><path fill="#172017" stroke="none" d="m189.12,101.69h2.29v-3.35c6.34,-0.32 10.09,-3.47 10.09,-8.57 0,-4.53 -3.18,-7.27 -8.66,-8.47l-1.43,-0.34v-6.06c1.98,0.3 3.1,1.43 3.26,3.18h6.46c-0.06,-4.95 -3.79,-8.42 -9.71,-8.8v-3.35h-2.29v3.35c-5.83,0.4 -9.88,3.81 -9.88,8.74 0,4.27 2.97,6.72 7.86,7.85l2.02,0.48v6.38c-2.46,-0.3 -4.04,-1.68 -4.17,-4.09h-6.46c0.1,6.19 4.19,9.39 10.63,9.71zM191.41,92.71v-5.81c2.23,0.67 3.29,1.49 3.29,2.86 0,1.52 -1.24,2.65 -3.29,2.95zM189.12,80.4c-1.81,-0.57 -2.93,-1.39 -2.93,-2.84 0,-1.35 0.99,-2.38 2.93,-2.67z"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.2v15.6a.8.8 0 001.2.7l13-7.8a.8.8 0 000-1.4l-13-7.8A.8.8 0 007 4.2z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A2.5 2.5 0 016.5 6H8l1.3-2h5.4L16 6h1.5A2.5 2.5 0 0120 8.5v9a2.5 2.5 0 01-2.5 2.5h-11A2.5 2.5 0 014 17.5z"/><circle cx="12" cy="13" r="3.6"/></symbol>
+<symbol id="i-wifioff" viewBox="0 0 24 24"><path d="M2.5 9a15 15 0 015-3.2M21.5 9a15 15 0 00-8.7-4M5.8 12.6a10 10 0 014-2.4M18.2 12.6a10 10 0 00-3.4-2.2M9.4 16.2a5 5 0 015.2 0M12 19.6h.01M3 3l18 18"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+<symbol id="i-micoff" viewBox="0 0 24 24"><path d="M9 9.5V6a3 3 0 015.8-1M15 10v1a3 3 0 01-4.5 2.6M5 11a7 7 0 0010.8 5.9M19 11a7 7 0 01-.8 3.2M12 18v3M3 3l18 18"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5.5c0 4.6-3.2 8.3-8 9.5-4.8-1.2-8-4.9-8-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8 6.8 19.6l1-5.8L3.5 9.7l5.9-.8z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6.5L5.5 8 8 5.5M4 12.5L5.5 14 8 11.5M4 18.5L5.5 20 8 17.5M11 7h9M11 13h9M11 19h9"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21zM9 8h6M9 12h6"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2.2l2.1 10.3a1 1 0 001 .8h8.5a1 1 0 001-.8L19.5 8H6"/><circle cx="9.5" cy="19.3" r="1.2"/><circle cx="16.5" cy="19.3" r="1.2"/></symbol>
+<symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.6"/><path d="M6.5 12h.01M17.5 12h.01"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20l.9-4L16.4 4.5a2 2 0 012.8 2.8L7.7 18.8zM14.6 6.4l3 3"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h8M16 7h4M4 17h4M12 17h8"/><circle cx="14" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5L5 13.5h6L10 21.5l8-11h-6z" fill="currentColor"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+</svg>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-nav">
+  <div class="nav-in" data-open="false">
+    <a class="brand" href="#" aria-label="Chekash, inicio"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wordmark">chekash<i>.</i></span></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#funciones">Funciones</a><a href="#planes">Planes</a><a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn-ink btn-sm nav-cta" data-play data-live-text="Descargar" href="mailto:appchekash@gmail.com?subject=Av%C3%ADsame%20cuando%20Chekash%20est%C3%A9%20en%20Google%20Play">Avísame cuando salga</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Abrir menú"><svg class="i" aria-hidden="true"><use href="#i-menu"/></svg></button>
   </div>
-
-  <h2 id="como">Cómo funciona</h2>
-  <ol class="steps">
-    <li><div><strong>Escanea</strong><br><span style="color:var(--mu)">Apunta la cámara al precio del producto.</span></div></li>
-    <li><div><strong>Convierte</strong><br><span style="color:var(--mu)">Chekash muestra el monto en dólares y en bolívares.</span></div></li>
-    <li><div><strong>Suma y decide</strong><br><span style="color:var(--mu)">Agrégalo a tu lista y compara con tu presupuesto.</span></div></li>
-  </ol>
-
-  <h2 id="legal">Información legal</h2>
-  <div class="legal">
-    <a href="/Chekash/privacy-policy.html">Política de privacidad</a>
-    <a href="/Chekash/terminos-de-uso.html">Términos de uso</a>
+</header>
+<main>
+<section class="hero on-dark" id="contenido">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Apunta al precio. Sabe cuánto pagas.</h1>
+      <p class="lead">Chekash lee la etiqueta con la cámara y suma tu compra en dólares, euros y bolívares con la tasa del BCV.</p>
+      <div class="cta-row"><a class="store-soon " data-play data-live-small="Disponible en"><svg class="i i-fill" aria-hidden="true"><use href="#i-play"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a><a class="btn btn-lime btn-lg" data-notify href="mailto:appchekash@gmail.com?subject=Av%C3%ADsame%20cuando%20Chekash%20est%C3%A9%20en%20Google%20Play&amp;body=Hola%2C%20av%C3%ADsenme%20cuando%20Chekash%20est%C3%A9%20disponible%20en%20Google%20Play.">Avísame cuando salga</a></div>
+      <p class="hero-note">Para teléfonos Android. Gratis para empezar.</p>
+    </div>
+    <div class="hero-stage" aria-hidden="true">
+      <div class="rings"><i></i><i></i><i></i></div>
+      <span class="chip chip-usd tag tag-usd num">$ 2,50</span>
+      <span class="chip chip-eur tag tag-eur num">€ 1,80</span>
+      <span class="chip chip-bs tag tag-bs num">Bs 2.243,85</span>
+      <div class="phone" data-demo><div class="glass"><div class="screen ap" data-screen="scan" data-usd="835" data-bs="749445" data-mode="usd">
+  <div class="ap-status"><span>1:24 p. m.</span><i class="ap-hole"></i><span class="ap-bat"></span></div>
+  <div class="ap-pill"><svg class="lg" viewBox="0 0 260 260"><use href="#logo"/></svg><div><b>BCV 897,54</b><small>Lunes 09/11</small></div></div>
+  <div class="ap-ibtn" style="left:294px;top:42px;width:50px;height:54px"><svg viewBox="0 0 24 24"><use href="#i-sliders"/></svg></div>
+  <div class="ap-vf"><div class="vf-bg"></div>
+    <i class="vf-bracket a"></i><i class="vf-bracket b"></i><i class="vf-bracket c"></i><i class="vf-bracket d"></i>
+    <div class="vf-label in"><span class="vf-name">CAFÉ 250 G</span><span class="vf-price"><span class="vf-price-t">$3,80</span><i class="vf-box on"></i></span><span class="vf-bars"></span></div>
+    <div class="vf-scan" style="top:84px"></div>
   </div>
-
-  <h2>Contacto</h2>
-  <p>¿Dudas o sugerencias? Escríbenos a <a href="mailto:appchekash@gmail.com" style="color:var(--g)">appchekash@gmail.com</a>.</p>
-
-  <footer>© 2026 Gámez Dev · Chekash</footer>
-</div>
+  <div class="ap-seg"><span class="on" data-mode="usd">Dólares</span><span data-mode="bs">Bolívares</span></div>
+  <div class="ap-ibtn" style="left:302px;top:288px;width:42px;height:42px"><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
+  <div class="ap-card"><div class="ap-card-h"><span>Compra de hoy</span><b data-count>3 productos</b></div>
+    <div class="ap-rows" data-rows><div class="ap-row"><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Harina PAN 1 kg</b><small>Bs. 1.301,43</small></span><span class="pr">$1,45</span></div><div class="ap-row"><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Aceite 1 L</b><small>Bs. 2.782,37</small></span><span class="pr">$3,10</span></div><div class="ap-row new"><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Café 250 g</b><small>Bs. 3.410,65</small></span><span class="pr">$3,80</span></div></div>
+    <div class="ap-empty"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-camera"/></svg></span><div><b>Tu compra empieza aquí</b><span>Apunta al precio de uno o toca Escribir.</span></div></div>
+  </div>
+  <div class="ap-total"><span class="l">TOTAL</span><span class="r"><span class="big" data-total-big>$8,35</span><span class="sm" data-total-sm>≈ Bs. 7.494,45</span></span></div>
+  <div class="ap-nav"><div><svg viewBox="0 0 24 24"><use href="#i-list"/></svg>Mi lista</div><div><svg viewBox="0 0 24 24"><use href="#i-receipt"/></svg>Historial</div><div></div><div><svg viewBox="0 0 24 24"><use href="#i-cash"/></svg>Presupuesto</div><div><svg viewBox="0 0 24 24"><use href="#i-pencil"/></svg>Escribir</div><span class="ap-fab"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg></span></div>
+</div></div></div>
+    </div>
+  </div>
+</section>
+<div class="edge" aria-hidden="true"></div>
+<section class="trust" aria-label="Lo esencial">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><span class="ic chip-usd"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg></span><h3>Lee la etiqueta en tu teléfono</h3><p>Las fotos no se guardan ni se envían a ningún servidor.</p></div>
+    <div class="trust-item"><span class="ic chip-eur"><svg class="i" aria-hidden="true"><use href="#i-wifioff"/></svg></span><h3>Funciona sin internet</h3><p>Sin conexión usa la última tasa guardada y te lo avisa.</p></div>
+    <div class="trust-item"><span class="ic chip-bs"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><h3>Tasa BCV, USDT o la tuya</h3><p>Elige de dónde sale la tasa o escribe la que te cobran.</p></div>
+  </div>
+</section>
+<section class="features" id="funciones">
+  <div class="wrap">
+    <div class="sec-head"><h2>Haz la cuenta antes de llegar a la caja.</h2><p class="lead">Escanea, anota, ponle tope y compara. Todo en la misma pantalla, sin salir del pasillo.</p></div>
+    <div class="feat-grid">
+      <div class="feat-panels"><article class="feat" data-screen="scan"><h3>Apunta y listo.</h3><p>Chekash lee el precio y el nombre de la etiqueta y los suma a tu compra. Cambia entre dólares y bolívares con un toque.</p><ul class="facts"><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Con la tasa del BCV, USDT o una que escribas</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>¿Etiqueta borrosa? Toca Escribir y la agregas a mano</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Nunca salen anuncios mientras escaneas</span></li></ul><div class="feat-slot" data-screen="scan"></div></article><article class="feat" data-screen="lista"><h3>Anota antes de salir.</h3><p>Escribe o pega tu lista. Cada producto se tacha solo cuando lo escaneas.</p><ul class="facts"><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Ves cuánto falta por comprar, estimado</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Repite tu última compra con un toque</span></li></ul><div class="feat-slot" data-screen="lista"></div></article><article class="feat" data-screen="presupuesto"><h3>Ponle tope a la compra.</h3><p>Fija cuánto quieres gastar y mira cuánto te queda mientras recorres los pasillos.</p><ul class="facts"><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>El total siempre en dólares y en bolívares</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Si te pasas del tope, lo ves al instante</span></li></ul><div class="feat-slot" data-screen="presupuesto"></div></article><article class="feat" data-screen="historial"><h3>Acuérdate de lo que pagaste.</h3><p>Cada compra queda en tu historial. Chekash te avisa si un producto subió o si lo viste más barato en otra tienda.</p><ul class="facts"><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Solo compara con lo que tú mismo escaneaste</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Compártela en texto, o en PDF y Excel con Premium</span></li></ul><div class="feat-slot" data-screen="historial"></div></article></div>
+      <div class="feat-stage" aria-hidden="true"><div class="rings" aria-hidden="true"><i></i><i></i><i></i></div><div class="phone" aria-hidden="true"><div class="glass"><div class="screen ap is-on" data-screen="scan" data-usd="835" data-bs="749445" data-mode="usd">
+  <div class="ap-status"><span>1:24 p. m.</span><i class="ap-hole"></i><span class="ap-bat"></span></div>
+  <div class="ap-pill"><svg class="lg" viewBox="0 0 260 260"><use href="#logo"/></svg><div><b>BCV 897,54</b><small>Lunes 09/11</small></div></div>
+  <div class="ap-ibtn" style="left:294px;top:42px;width:50px;height:54px"><svg viewBox="0 0 24 24"><use href="#i-sliders"/></svg></div>
+  <div class="ap-vf"><div class="vf-bg"></div>
+    <i class="vf-bracket a"></i><i class="vf-bracket b"></i><i class="vf-bracket c"></i><i class="vf-bracket d"></i>
+    <div class="vf-label in"><span class="vf-name">CAFÉ 250 G</span><span class="vf-price"><span class="vf-price-t">$3,80</span><i class="vf-box on"></i></span><span class="vf-bars"></span></div>
+    <div class="vf-scan" style="top:84px"></div>
+  </div>
+  <div class="ap-seg"><span class="on" data-mode="usd">Dólares</span><span data-mode="bs">Bolívares</span></div>
+  <div class="ap-ibtn" style="left:302px;top:288px;width:42px;height:42px"><svg viewBox="0 0 24 24"><use href="#i-bolt"/></svg></div>
+  <div class="ap-card"><div class="ap-card-h"><span>Compra de hoy</span><b data-count>3 productos</b></div>
+    <div class="ap-rows" data-rows><div class="ap-row"><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Harina PAN 1 kg</b><small>Bs. 1.301,43</small></span><span class="pr">$1,45</span></div><div class="ap-row"><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Aceite 1 L</b><small>Bs. 2.782,37</small></span><span class="pr">$3,10</span></div><div class="ap-row new"><span class="ck"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Café 250 g</b><small>Bs. 3.410,65</small></span><span class="pr">$3,80</span></div></div>
+    <div class="ap-empty"><span class="ic"><svg viewBox="0 0 24 24"><use href="#i-camera"/></svg></span><div><b>Tu compra empieza aquí</b><span>Apunta al precio de uno o toca Escribir.</span></div></div>
+  </div>
+  <div class="ap-total"><span class="l">TOTAL</span><span class="r"><span class="big" data-total-big>$8,35</span><span class="sm" data-total-sm>≈ Bs. 7.494,45</span></span></div>
+  <div class="ap-nav"><div><svg viewBox="0 0 24 24"><use href="#i-list"/></svg>Mi lista</div><div><svg viewBox="0 0 24 24"><use href="#i-receipt"/></svg>Historial</div><div></div><div><svg viewBox="0 0 24 24"><use href="#i-cash"/></svg>Presupuesto</div><div><svg viewBox="0 0 24 24"><use href="#i-pencil"/></svg>Escribir</div><span class="ap-fab"><svg viewBox="0 0 24 24"><use href="#i-cart"/></svg></span></div>
+</div><div class="screen ap" data-screen="lista">
+  <div class="ap-status"><span>1:24 p. m.</span><i class="ap-hole"></i><span class="ap-bat"></span></div>
+  <div class="ap-head"><span class="ap-back"><svg viewBox="0 0 24 24"><use href="#i-back"/></svg></span><h4>Mi lista</h4></div>
+  <div class="ap-field"><span>Ej: 2 kilos de harina, leche...</span><i><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg></i></div>
+  <div class="ap-pillbtn" style="top:184px"><svg viewBox="0 0 24 24"><use href="#i-receipt"/></svg>Repetir mi última compra</div>
+  <div class="ap-list"><div class="ap-li"><span class="cb"></span><span class="t"><b>Arroz 1 kg</b></span><span class="est">≈ $1,30</span></div><div class="ap-li"><span class="cb"></span><span class="t"><b>Leche en polvo 400 g</b></span><span class="est">≈ $4,20</span></div><div class="ap-li"><span class="cb"></span><span class="t"><b>Aceite 1 L</b></span><span class="est">≈ $3,10</span></div><div class="ap-li"><span class="cb"></span><span class="t"><b>Café 250 g</b></span><span class="est">≈ $3,80</span></div><div class="ap-sec">Ya en el carrito · 1</div><div class="ap-li done"><span class="cb"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><span class="t"><b>Harina PAN 1 kg</b></span><span class="est">$1,45</span></div></div>
+  <div class="ap-total alt"><span class="l">Lo que falta,<br>estimado</span><span class="r"><span class="big">$12,40</span><span class="sm">≈ Bs. 11.129,49</span></span></div>
+</div><div class="screen ap" data-screen="presupuesto">
+  <div class="ap-status"><span>1:24 p. m.</span><i class="ap-hole"></i><span class="ap-bat"></span></div>
+  <div class="ap-head"><span class="ap-back"><svg viewBox="0 0 24 24"><use href="#i-back"/></svg></span><h4>Presupuesto</h4></div>
+  <div class="ap-bcard"><span class="k">Te quedan</span><span class="big">$11,65</span><span class="sm">≈ Bs. 10.456,35</span>
+    <div class="ap-bar"><i style="width:41.75%"></i></div>
+    <div class="ap-bar-l"><span>Llevas $8,35</span><span>Tope $20,00</span></div></div>
+  <div class="ap-wcard"><div class="ap-ok"><i><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></i>Dentro del presupuesto</div>
+    <div class="ap-kv"><span>Productos</span><b>3</b></div>
+    <div class="ap-kv"><span>Llevas</span><b>Bs. 7.494,45</b></div>
+    <div class="ap-kv"><span>Tope</span><b>Bs. 17.950,80</b></div></div>
+  <div class="ap-note">Te avisa cuando te pasas del tope.</div>
+  <div class="ap-bigbtn">Cambiar tope</div>
+</div><div class="screen ap" data-screen="historial">
+  <div class="ap-status"><span>1:24 p. m.</span><i class="ap-hole"></i><span class="ap-bat"></span></div>
+  <div class="ap-head"><span class="ap-back"><svg viewBox="0 0 24 24"><use href="#i-back"/></svg></span><h4>Historial</h4></div>
+  <div class="ap-notice up" style="top:112px"><svg viewBox="0 0 24 24"><use href="#i-up"/></svg><span>Harina PAN 1 kg subió: antes $1,35, ahora $1,45</span></div>
+  <div class="ap-notice down" style="top:170px"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg><span>Café 250 g: más barato en Mercado Central ($3,60)</span></div>
+  <div class="ap-hcard" style="top:232px"><div class="ap-hh"><div><small>Hoy</small><b>5 productos</b></div><div class="tot"><b>$13,85</b><small>Bs. 12.430,92</small></div></div>
+    <div class="ap-hl"><span>Harina PAN 1 kg</span><b>$1,45</b></div><div class="ap-hl"><span>Arroz 1 kg</span><b>$1,30</b></div><div class="ap-hl"><span>Leche en polvo 400 g</span><b>$4,20</b></div><div class="ap-more">Ver los 2 productos restantes</div>
+    <div class="ap-acts"><span class="p">Compartir</span><span class="o">Pasar a mi lista de mercado</span></div></div>
+  <div class="ap-hmini" style="top:596px"><div><small>Sábado 31 de octubre</small><b>8 productos</b></div><b>$22,10</b></div>
+  <div class="ap-hmini" style="top:664px"><div><small>Sábado 24 de octubre</small><b>6 productos</b></div><b>$17,60</b></div>
+</div></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="calc" id="calculadora">
+  <div class="wrap calc-grid">
+    <div>
+      <h2>Haz la cuenta tú mismo.</h2>
+      <p class="lead">Escribe un precio en dólares y mira cuántos bolívares son. Cambia la tasa por la del día.</p>
+    </div>
+    <div>
+      <div class="ticket">
+        <div class="fld"><label for="c-usd">Dólares</label><div class="in-wrap"><span>$</span><input id="c-usd" inputmode="decimal" autocomplete="off" value="1,45"></div></div>
+        <div class="fld small"><label for="c-rate">Tasa (bolívares por dólar)</label><div class="in-wrap"><span>Bs.</span><input id="c-rate" inputmode="decimal" autocomplete="off" value="897,54"></div></div>
+        <div class="fld out"><label for="c-bs">Bolívares</label><div class="in-wrap"><span>Bs.</span><input id="c-bs" inputmode="decimal" autocomplete="off" value="1.301,43"></div></div>
+      </div>
+      <p class="ticket-note">La tasa de arriba es de ejemplo. En la app se actualiza sola con el BCV, o escribes la tuya.</p>
+    </div>
+  </div>
+</section>
+<section class="pv on-dark" id="privacidad">
+  <div class="rings" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap pv-grid">
+    <div><h2>Tus datos se quedan en tu teléfono.</h2><p class="lead">Chekash hace la cuenta sin pedirte más de lo necesario.</p><a class="btn btn-lime" href="/Chekash/privacy-policy.html">Leer la política de privacidad</a></div>
+    <ul class="pv-list"><li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg></span><div><h3>Tus fotos no se guardan</h3><p>El texto de la etiqueta se lee dentro de tu teléfono. La imagen se descarta al instante y no se envía a ningún servidor.</p></div></li><li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span><div><h3>Sin cuenta, todo se queda contigo</h3><p>Tus compras, tu lista y tu presupuesto viven en tu teléfono. La cuenta y el respaldo en la nube son opcionales y forman parte de Premium.</p></div></li><li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-micoff"/></svg></span><div><h3>Sin micrófono, ubicación ni contactos</h3><p>Chekash no pide esos permisos ni entra a tus fotos o archivos.</p></div></li><li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span><div><h3>No vendemos tus datos</h3><p>El plan gratis muestra anuncios de Google AdMob, pero Chekash no le envía tus compras, precios, productos, correo ni fotos.</p></div></li><li><span class="ic"><svg class="i" aria-hidden="true"><use href="#i-trash"/></svg></span><div><h3>Borra tu cuenta cuando quieras</h3><p>Desde la app, en Cuenta y Eliminar mi cuenta. Se borra todo lo que subiste a la nube.</p></div></li></ul>
+  </div>
+</section>
+<section class="plans" id="planes">
+  <div class="wrap">
+    <div class="sec-head"><h2>Gratis para empezar. Premium para quitar los límites.</h2><p class="lead">Usa Chekash gratis todo lo que quieras. Pasa a Premium cuando quieras tu historial completo, sin anuncios.</p></div>
+    <div class="plan-grid">
+      <div class="plan-free">
+        <h3>Gratis</h3>
+        <p class="plan-price num">USD 0</p>
+        <p class="plan-sub">Con anuncios y algunos límites.</p>
+        <ul class="plan-list "><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Escáner de precios</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Suma en dólares, euros y bolívares</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Presupuesto y lista de mercado</span></li></ul>
+        <h4>Con estos límites</h4>
+        <ul class="plan-list limits"><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Anuncios, nunca mientras escaneas</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Historial: ves tu compra más reciente</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Exportar en texto viendo un anuncio</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Memoria de precios limitada</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Conectarte a internet de vez en cuando</span></li></ul>
+      </div>
+      <div class="plan-pro on-dark">
+        <div class="pro-top"><span class="star"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg></span><div><h3>Chekash Premium</h3><p>Quita los anuncios y llévate todo</p></div></div>
+        <div class="toggle" role="group" aria-label="Periodo de cobro" data-plan-toggle>
+          <button type="button" data-plan="year" aria-pressed="true">Anual</button><button type="button" data-plan="month" aria-pressed="false">Mensual</button>
+        </div>
+        <p class="plan-price num" style="margin-top:22px">USD <span data-price>19,99</span><small data-per>/ año</small></p>
+        <p class="plan-sub" data-sub aria-live="polite">Equivale a USD 1,67 al mes. Ahorras 44 % frente al plan mensual.</p>
+        <ul class="plan-list "><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Sin anuncios</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Historial completo</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Exportar en texto, PDF y Excel (CSV)</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Memoria de precios completa: lo que pagaste antes y cuándo sube un precio</span></li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Cuenta y respaldo en la nube</span></li></ul>
+        <p class="fine">El precio final, en tu moneda y con impuestos, lo ves en la pantalla de pago de Google Play antes de pagar. Se renueva solo hasta que cancelas, en Google Play. Más detalles en los <a href="/Chekash/terminos-de-uso.html#sec-6">términos de uso</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="faq" id="preguntas">
+  <div class="wrap faq-grid">
+    <div><h2>Preguntas frecuentes</h2><p class="lead">¿No está tu duda? Escríbenos a <a href="mailto:appchekash@gmail.com">appchekash@gmail.com</a>.</p></div>
+    <div><details><summary>¿Funciona sin internet?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Sí. Escanear, sumar y llevar tu lista funcionan sin conexión, con la última tasa guardada; la app te avisa que no es la de hoy.</p><p>En el plan gratis hay que conectarse de vez en cuando, por ejemplo tras 24 horas sin internet o 10 productos agregados sin conexión. Premium no tiene esa condición.</p></div></details><details><summary>¿De dónde sale la tasa?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Del sitio del Banco Central de Venezuela (bcv.org.ve) y de servicios públicos de consulta (ve.dolarapi.com) para la tasa USDT. También puedes escribir la tuya.</p><p>La tasa es informativa y puede ser distinta a la que aplique un comercio, un banco o una casa de cambio.</p></div></details><details><summary>¿Qué tan exacta es la lectura de precios?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>El reconocimiento de texto puede equivocarse con etiquetas borrosas, con brillo, de varios precios o por kilo. Los totales son una estimación: revisa cada renglón y el total en la caja.</p><p>El precio que cobra el comercio es el que vale. El IVA solo se suma si lo activas tú y con el porcentaje que indiques.</p></div></details><details><summary>¿Guardan mis fotos?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>No. El texto de la etiqueta se lee dentro de tu teléfono y la imagen se descarta al instante. No se guarda ni se envía a ningún servidor.</p></div></details><details><summary>¿Necesito una cuenta?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>No. Chekash funciona sin cuenta y tus datos se quedan en tu teléfono. La cuenta y el respaldo en la nube son parte de Premium; quien ya tenía una sesión iniciada la conserva.</p></div></details><details><summary>¿Qué pasa si cancelo Premium?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Vuelven los anuncios y los límites del plan gratis, pero tus datos no se borran: el historial más antiguo queda bloqueado y lo recuperas si vuelves a Premium.</p><p>Se cancela en Google Play, en Pagos y suscripciones. Desinstalar la app no cancela la suscripción.</p></div></details><details><summary>¿Hay versión para iPhone?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Por ahora Chekash es solo para Android.</p></div></details></div>
+  </div>
+</section>
+<section class="final on-dark-none">
+  <div class="wrap">
+    <div class="final-card">
+      <div>
+        <h2>Tu próxima compra, con la cuenta clara.</h2>
+        <p class="lead">Chekash llega pronto a Google Play. Escríbenos y te avisamos el día que salga.</p>
+        <div class="cta-row"><a class="store-soon " data-play data-live-small="Disponible en"><svg class="i i-fill" aria-hidden="true"><use href="#i-play"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a><a class="btn btn-ink btn-lg" data-notify href="mailto:appchekash@gmail.com?subject=Av%C3%ADsame%20cuando%20Chekash%20est%C3%A9%20en%20Google%20Play&amp;body=Hola%2C%20av%C3%ADsenme%20cuando%20Chekash%20est%C3%A9%20disponible%20en%20Google%20Play.">Avísame cuando salga</a></div>
+      </div>
+      <div class="final-art" aria-hidden="true">
+        <svg class="logo" viewBox="0 0 260 260"><use href="#logo"/></svg>
+        <span class="chip chip-eur a num">€ 1,80</span><span class="chip chip-bs b num">Bs 2.243,85</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Chekash, inicio" style="color:#fff"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wordmark">chekash<i>.</i></span></a>
+        <p>Una ayuda para calcular tus compras en dólares, euros y bolívares.</p>
+      </div>
+      <div class="foot-cols">
+        <div><h4>Chekash</h4><ul><li><a href="index.html#funciones">Funciones</a></li><li><a href="index.html#planes">Planes</a></li><li><a href="index.html#preguntas">Preguntas</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="/Chekash/privacy-policy.html">Política de privacidad</a></li><li><a href="/Chekash/terminos-de-uso.html">Términos de uso</a></li></ul></div>
+        <div><h4>Contacto</h4><ul><li><a href="mailto:appchekash@gmail.com">appchekash@gmail.com</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Gámez Dev. Chekash es una ayuda para calcular: revisa siempre el total en la caja.</span>
+      <span>Hecho en Venezuela</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

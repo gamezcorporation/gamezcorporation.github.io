@@ -1,0 +1,5 @@
+PAQUETE 1 de 2: va en el repo gamezcorporation.github.io (la raiz de tu pagina)
+Sube TODO lo que hay aqui (index.html, logo.svg, og-image.png, favicon-32.png, apple-touch-icon.png y la carpeta assets).
+Reemplaza index.html y logo.svg. NO toques app-ads.txt, README.md ni google09c8c0db5a83ed85.html.
+Los enlaces a la politica y a los terminos apuntan a /Chekash/..., asi que esas URLs no cambian.
+Cuando publiques en Google Play: pon el enlace en PLAY_URL al inicio de assets/site.js.
