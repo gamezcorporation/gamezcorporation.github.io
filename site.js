@@ -232,4 +232,9 @@
     };
     addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }
+  /* ---------- Barra: transparente sobre la cabecera, sólida al bajar ---------- */
+  if (navIn) {
+    const stick = () => navIn.classList.toggle('is-stuck', scrollY > 24);
+    addEventListener('scroll', stick, { passive: true }); stick();
+  }
 })();

@@ -64,10 +64,10 @@
 <section class="hero on-dark" id="contenido">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>Apunta al precio. Sabe cuánto pagas.</h1>
+      <h1>Apunta al precio. <span class="l2">Sabe cuánto pagas.</span></h1>
       <p class="lead">Chekash lee la etiqueta con la cámara y suma tu compra en dólares, euros y bolívares con la tasa del BCV.</p>
       <div class="cta-row"><a class="store-soon " data-play data-live-small="Disponible en"><svg class="i i-fill" aria-hidden="true"><use href="#i-play"/></svg><span><small>Próximamente en</small><b>Google Play</b></span></a><a class="btn btn-lime btn-lg" data-notify href="mailto:appchekash@gmail.com?subject=Av%C3%ADsame%20cuando%20Chekash%20est%C3%A9%20en%20Google%20Play&amp;body=Hola%2C%20av%C3%ADsenme%20cuando%20Chekash%20est%C3%A9%20disponible%20en%20Google%20Play.">Avísame cuando salga</a></div>
-      <p class="hero-note">Para teléfonos Android. Gratis para empezar.</p>
+      <ul class="hero-proof"><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Para teléfonos Android</li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Gratis para empezar</li><li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tus fotos no se guardan</li></ul>
     </div>
     <div class="hero-stage" aria-hidden="true">
       <div class="rings"><i></i><i></i><i></i></div>
@@ -96,13 +96,6 @@
   </div>
 </section>
 <div class="edge" aria-hidden="true"></div>
-<section class="trust" aria-label="Lo esencial">
-  <div class="wrap trust-grid">
-    <div class="trust-item"><span class="ic chip-usd"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg></span><h3>Lee la etiqueta en tu teléfono</h3><p>Las fotos no se guardan ni se envían a ningún servidor.</p></div>
-    <div class="trust-item"><span class="ic chip-eur"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span><h3>Empieza sin cuenta</h3><p>Tus compras se quedan en tu teléfono. No te pedimos correo para usarla.</p></div>
-    <div class="trust-item"><span class="ic chip-bs"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><h3>Dólar o euro, con tu tasa</h3><p>BCV o USDT para el dólar, BCV para el euro, o escribe la que te cobran.</p></div>
-  </div>
-</section>
 <section class="features" id="funciones">
   <div class="wrap">
     <div class="sec-head"><h2>Haz la cuenta antes de llegar a la caja.</h2><p class="lead">Escanea, anota, ponle tope y compara. Todo en la misma pantalla, sin salir del pasillo.</p></div>
@@ -165,7 +158,7 @@
       <p class="lead">Escribe un precio en dólares y mira cuántos bolívares son. Cambia la tasa por la del día.</p>
     </div>
     <div>
-      <div class="ticket">
+      <div class="ticket"><div class="ticket-top"><b>chekash.</b><span>Recibo de ejemplo</span></div>
         <div class="fld"><label for="c-usd">Dólares</label><div class="in-wrap"><span>$</span><input id="c-usd" inputmode="decimal" autocomplete="off" value="1,45"></div></div>
         <div class="fld small"><label for="c-rate">Tasa (bolívares por dólar)</label><div class="in-wrap"><span>Bs.</span><input id="c-rate" inputmode="decimal" autocomplete="off" value="897,54"></div></div>
         <div class="fld out"><label for="c-bs">Bolívares</label><div class="in-wrap"><span>Bs.</span><input id="c-bs" inputmode="decimal" autocomplete="off" value="1.301,43"></div></div>
@@ -196,7 +189,7 @@
       <div class="plan-pro on-dark">
         <div class="pro-top"><span class="star"><svg class="i i-fill" aria-hidden="true"><use href="#i-star"/></svg></span><div><h3>Chekash Premium</h3><p>Quita los anuncios y llévate todo</p></div></div>
         <div class="toggle" role="group" aria-label="Periodo de cobro" data-plan-toggle>
-          <button type="button" data-plan="year" aria-pressed="true">Anual</button><button type="button" data-plan="month" aria-pressed="false">Mensual</button>
+          <button type="button" data-plan="year" aria-pressed="true">Anual<small>−44 %</small></button><button type="button" data-plan="month" aria-pressed="false">Mensual</button>
         </div>
         <p class="plan-price num" style="margin-top:22px">USD <span data-price>19,99</span><small data-per>/ año</small></p>
         <p class="plan-sub" data-sub aria-live="polite">Equivale a USD 1,67 al mes. Ahorras 44 % frente al plan mensual.</p>
