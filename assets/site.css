@@ -223,3 +223,14 @@ h1{letter-spacing:-.055em}
 .legal-body .resumen{border-radius:28px;padding:26px 30px}
 .legal-body .tabla{border-radius:22px}
 @media (max-width:980px){.legal-top{padding-top:124px}}
+
+/* ==========================================================================
+   Fondo de pantalla como el de la app (Ajustes / Premium)
+   Claro: lavado lima que se apaga hacia gris claro. Oscuro: negro con brillo verde oliva arriba.
+   Va fijo detrás de todo; las secciones con color propio (hero, calculadora, privacidad, pie) lo tapan.
+   ========================================================================== */
+:root{--wash:linear-gradient(180deg,#D6F0AC 0%,#E8F5D8 36%,#F5F6F7 72%)}
+@media (prefers-color-scheme:dark){
+  :root{--wash:radial-gradient(85% 52% at 10% 0%,rgba(104,130,30,.62),transparent 72%),radial-gradient(70% 46% at 100% 6%,rgba(72,98,26,.42),transparent 72%),linear-gradient(180deg,#141A0B 0%,#0A0C0B 60%)}
+}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--wash)}

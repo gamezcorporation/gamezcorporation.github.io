@@ -467,9 +467,10 @@ h2{font-size:clamp(2.2rem,5.2vw,4.4rem);line-height:.98;letter-spacing:-.05em}
 .final-card{border-radius:56px;padding:84px 64px}
 .final-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(rgba(7,17,11,.12) 1px,transparent 1.4px) 0 0/26px 26px}
 .final-card>*{position:relative}
+.final-card .btn-ink{background:#07110B;color:var(--lime)}
 .final-card h2{font-size:clamp(2.4rem,5.6vw,4.6rem)}
 
-@media (max-width:1020px){.hero{padding-top:128px}.pv-grid{gap:40px}}
+@media (max-width:1020px){.hero{padding-top:128px}.hero-grid{grid-template-columns:minmax(0,1fr);gap:8px}.hero h1{max-width:13ch}.pv-grid{grid-template-columns:minmax(0,1fr);gap:40px}.pv h2{max-width:12ch}}
 @media (max-width:640px){
   .pv-list{grid-template-columns:1fr}
   .ticket{transform:none;padding:22px 22px 34px}
