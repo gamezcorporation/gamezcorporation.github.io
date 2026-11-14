@@ -18,25 +18,25 @@
   --font:"Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 
   /* Superficies y texto */
-  --bg:#F4F6F2; --surface:#FFFFFF; --sunken:#E6EBE4;
-  --outline:#D8DFD5; --outline-strong:#76867B;
-  --ink:#0D1B14; --ink-muted:#44524A;
+  --bg:#F5F6F7; --surface:#FFFFFF; --sunken:#ECEEF0;
+  --outline:#E3E6E9; --outline-strong:#737B83;
+  --ink:#0A0C0B; --ink-muted:#5A6169;
 
   /* Marca */
-  --brand:#0B5D40; --on-brand:#FFFFFF; --brand-soft:#D5F2E1;
-  --signal:#C8F23E;                       /* solo retícula y lectura lograda */
+  --brand:#B6F23A; --brand-ink:#2F6B00; --brand-dot:#8FCB1C; --on-brand:#07110B; --brand-soft:#F0FBD2;
+  --signal:#B6F23A;                       /* solo retícula y lectura lograda */
   /* Colores REALES de la app (Theme.kt): los usa solo el teléfono */
   --lime:#B6F23A; --lime-deep:#8FCB1C; --mint:#D5F57F; --ease:cubic-bezier(.2,.8,.2,1);
 
   /* Las tres monedas: identidad fija. Sobre claro y sobre cámara (oscuro). */
-  --usd:#0B5D40; --ves:#8A4B00; --eur:#1F4F9E;
-  --usd-cam:#7BE0AE; --ves-cam:#FFB84D; --eur-cam:#8DB8FF;
+  --usd:#2F6B00; --ves:#8A4B00; --eur:#1F4F9E;
+  --usd-cam:#B6F23A; --ves-cam:#FFB84D; --eur-cam:#8DB8FF;
 
   /* Cámara: siempre oscura, en cualquier tema */
-  --camera:#0A120E; --on-camera:#F2F8F4; --camera-line:#22332A; --camera-muted:#9DB1A5;
+  --camera:#0A0C0B; --on-camera:#F5F6F7; --camera-line:#262C29; --camera-muted:#A2ABA6;
 
   /* Estados */
-  --alert:#B3261E; --alert-soft:#FCE0DC; --positive:#17703F; --caution:#8A5A00;
+  --alert:#B3261E; --alert-soft:#FCE0DC; --positive:#2F6B00; --caution:#8A5A00;
 
   /* Forma */
   --r-control:14px; --r-card:20px; --r-view:28px; --r-pill:999px;
@@ -51,12 +51,12 @@
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#0A120E; --surface:#111C16; --sunken:#070D0A;
-    --outline:#22332A; --outline-strong:#5A6E62;
-    --ink:#EAF3ED; --ink-muted:#9DB1A5;
-    --brand:#7BE0AE; --on-brand:#06251A; --brand-soft:#143A2A;
-    --usd:#7BE0AE; --ves:#FFB84D; --eur:#8DB8FF;
-    --alert:#FF8A80; --alert-soft:#3A1613; --positive:#6FDC9A; --caution:#FFC266;
+    --bg:#0A0C0B; --surface:#151918; --sunken:#070908;
+    --outline:#262C29; --outline-strong:#5E6862;
+    --ink:#F4F6F5; --ink-muted:#A2ABA6;
+    --brand:#B6F23A; --brand-ink:#B6F23A; --brand-dot:#B6F23A; --on-brand:#07110B; --brand-soft:#26340F;
+    --usd:#B6F23A; --ves:#FFB84D; --eur:#8DB8FF;
+    --alert:#FF8A80; --alert-soft:#3A1613; --positive:#A6E22E; --caution:#FFC266;
     --shadow-sheet:0 16px 40px -16px rgba(0,0,0,.7);
   }
 }
@@ -77,10 +77,10 @@ body{
 }
 [hidden]{display:none!important}
 img,svg{display:block;max-width:100%}
-a{color:var(--brand);text-underline-offset:3px;text-decoration-thickness:1px;overflow-wrap:anywhere}
+a{color:var(--brand-ink);text-underline-offset:3px;text-decoration-thickness:1px;overflow-wrap:anywhere}
 h1,h2,h3,h4{margin:0;font-weight:700;text-wrap:balance;overflow-wrap:break-word}
 p{margin:0;text-wrap:pretty}
-:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:3px solid var(--brand-ink);outline-offset:3px;border-radius:6px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .skip{position:fixed;left:12px;top:-64px;z-index:300;background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:var(--r-control);text-decoration:none;font-weight:700}
 .skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
@@ -99,7 +99,7 @@ input,select,textarea{font-size:16px}  /* iOS hace zoom con menos de 16px */
 .brand{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;color:var(--ink)}
 .brand svg{width:36px;height:36px;border-radius:10px}
 .wordmark{font-weight:700;font-size:1.5rem;letter-spacing:-.045em;line-height:1}
-.wordmark i{font-style:normal;color:var(--brand)}
+.wordmark i{font-style:normal;color:var(--brand-dot)}
 
 /* ---------- Esquinas de visor: el motivo de marca ----------
    Cuatro marcas en L. En reposo enmarcan. Con la clase .lock convergen desde afuera
@@ -156,7 +156,7 @@ input,select,textarea{font-size:16px}  /* iOS hace zoom con menos de 16px */
 }
 .btn:active{transform:scale(.97)}
 .btn-primary{background:var(--brand);color:var(--on-brand)}
-.btn-tonal{background:var(--brand-soft);color:var(--brand)}
+.btn-tonal{background:var(--brand-soft);color:var(--brand-ink)}
 .btn-quiet{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--outline-strong)}
 .btn-lg{min-height:56px;padding:0 28px;font-size:1.0625rem}
 .btn-sm{min-height:44px;padding:0 18px;font-size:.95rem}
@@ -171,7 +171,7 @@ input,select,textarea{font-size:16px}  /* iOS hace zoom con menos de 16px */
   display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 22px 0 16px;border-radius:var(--r-control);
   box-shadow:inset 0 0 0 1.5px var(--outline-strong);color:var(--ink);text-decoration:none;
 }
-.store-soon .i{width:24px;height:24px;color:var(--brand)}
+.store-soon .i{width:24px;height:24px;color:var(--brand-ink)}
 .store-soon small{display:block;font-size:.8125rem;line-height:1.1;color:var(--ink-muted)}
 .store-soon b{display:block;font-size:1.0625rem;line-height:1.15;letter-spacing:-.02em}
 .store-soon.is-live{background:var(--brand);color:var(--on-brand);box-shadow:none}
