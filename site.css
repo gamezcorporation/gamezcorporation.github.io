@@ -8,10 +8,10 @@
    3. Esquinas de visor: el único adorno. Enmarcan lo que importa.
    ========================================================================== */
 
-@font-face{font-family:"Outfit";font-weight:400;font-style:normal;font-display:swap;src:url("fonts/outfit-regular.woff") format("woff")}
-@font-face{font-family:"Outfit";font-weight:700;font-style:normal;font-display:swap;src:url("fonts/outfit-bold.woff") format("woff")}
+@font-face{font-family:"Outfit";font-weight:400;font-style:normal;font-display:swap;src:url("outfit-regular.woff") format("woff")}
+@font-face{font-family:"Outfit";font-weight:700;font-style:normal;font-display:swap;src:url("outfit-bold.woff") format("woff")}
 /* Para pasar a Atkinson Hyperlegible Next (la tipografía de la app): descarga los .woff2,
-   ponlos en assets/fonts/, agrega aquí sus @font-face y cambia --font. Es el único sitio. */
+   ponlos en , agrega aquí sus @font-face y cambia --font. Es el único sitio. */
 
 :root{
   color-scheme:light dark;
