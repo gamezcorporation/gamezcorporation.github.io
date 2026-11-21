@@ -1,3 +1,8 @@
+EVOLUCION 21 nov 2026 (inicio oscuro, seccion Factura con IA, cinta, planes y preguntas actualizados)
+Archivos NUEVOS o CAMBIADOS (repo gamezcorporation.github.io, en la raiz): index.html, evolucion.css, evolucion.js, og-image.png, LEEME.txt.
+site.css, home.css, home.js y site.js NO cambiaron. Para volver al diseno anterior: restaura el index.html anterior (evolucion.css/js quedan sin usarse).
+Las paginas legales (repo Chekash) no cambian con este paquete.
+
 PAQUETE 1 de 2: va en el repo gamezcorporation.github.io (la raiz de tu pagina)
 Sube TODO lo que hay aqui (index.html, logo.svg, og-image.png, favicon-32.png, apple-touch-icon.png y la carpeta assets).
 Reemplaza index.html y logo.svg. NO toques app-ads.txt, README.md ni google09c8c0db5a83ed85.html.
