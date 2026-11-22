@@ -3,3 +3,6 @@ PAQUETE 1 de 2: repo gamezcorporation.github.io, en la raiz. Archivos NUEVOS o C
 Todo lo demas (evolucion.css/js, home.*, og-image.png, assets) queda igual.
 Los botones llevan &referrer=utm_...: en Play Console > Informes de adquisicion ves cuantas instalaciones vienen del boton (utm_medium=landing) y del QR (utm_medium=qr).
 Para volver al diseno anterior: restaura el index.html y site.js anteriores.
+
+CALCULADORA REAL (22 nov 2026): la seccion #calculadora ahora es la pantalla "Escribir precio" de la app (por unidad / por kilo, IVA, cantidad, teclado) con la misma cuenta que Money.kt y tasas en vivo de ve.dolarapi.com (BCV o USDT, dolar y euro, editables).
+Archivos NUEVOS: calculadora.css, calculadora.js. CAMBIADO: index.html (solo la seccion y 2 lineas de carga).

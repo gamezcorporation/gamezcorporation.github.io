@@ -14,7 +14,7 @@
 <link rel="preload" href="outfit-bold.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="outfit-regular.woff" as="font" type="font/woff" crossorigin>
 <link rel="canonical" href="https://gamezcorporation.github.io/">
-<link rel="stylesheet" href="site.css?v=20261114"><link rel="stylesheet" href="home.css?v=20261114"><link rel="stylesheet" href="evolucion.css?v=20261121"><link rel="stylesheet" href="lanzamiento.css?v=20261122">
+<link rel="stylesheet" href="site.css?v=20261114"><link rel="stylesheet" href="home.css?v=20261114"><link rel="stylesheet" href="evolucion.css?v=20261121"><link rel="stylesheet" href="lanzamiento.css?v=20261122"><link rel="stylesheet" href="calculadora.css?v=20261122">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Chekash">
 <meta property="og:locale" content="es_VE">
@@ -162,47 +162,22 @@
 <section class="calc" id="calculadora" aria-labelledby="calc-t">
   <div class="wrap calc-grid">
     <div class="calc-copy">
-      <p class="eyebrow">Calculadora</p><h2 id="calc-t">Pruébalo con tu precio.</h2>
-      <p class="lead">Escribe un precio y mira cuánto es en bolívares, dólares y euros. Cambia las tasas por las del día.</p>
-      <p class="fine">Las tasas de aquí son de ejemplo. En la app se actualizan solas con el BCV, o escribes la tuya.</p>
-    </div>
-    <div class="readout" data-calc>
-      <div class="cm"><i></i><i></i><i></i><i></i></div>
-      <div class="segs">
-        <div class="seg" role="group" aria-label="Tipo de precio" data-seg="mode" style="--n:2"><button type="button" data-v="unit" aria-pressed="true">Por unidad</button><button type="button" data-v="kilo" aria-pressed="false">Por kilo</button></div>
-        <div class="seg" role="group" aria-label="Moneda del precio" data-seg="cur" data-cur style="--n:3"><button type="button" data-v="usd" aria-pressed="true">$</button><button type="button" data-v="eur" aria-pressed="false">€</button><button type="button" data-v="ves" aria-pressed="false">Bs.</button></div>
-      </div>
-
-      <div class="mode" data-mode="unit">
-        <div class="fields one"><div class="fld"><label for="c-price">Precio</label>
-          <div class="in-wrap" data-wrap="price"><span data-sym>$</span><input id="c-price" inputmode="decimal" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="14" value="1,45" aria-describedby="c-hint"></div>
-          <div class="hint" id="c-hint" data-hint></div></div></div>
-      </div>
-
-      <div class="mode" data-mode="kilo" hidden>
-        <div class="fields">
-          <div class="fld"><label for="k-price">Precio por kilo</label>
-            <div class="in-wrap" data-wrap="kprice"><span data-sym>$</span><input id="k-price" inputmode="decimal" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="14" value="2"></div></div>
-          <div class="fld"><label for="k-qty">Peso que llevas</label>
-            <div class="in-wrap" data-wrap="kqty"><input id="k-qty" inputmode="decimal" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="14" value="500">
-              <div class="unit" role="group" aria-label="Unidad de peso" data-unit><button type="button" data-v="g" aria-pressed="true">g</button><button type="button" data-v="kg" aria-pressed="false">kg</button></div></div></div>
+      <p class="eyebrow">Calculadora</p><h2 id="calc-t">La pantalla de la app. Pruébala.</h2>
+      <p class="lead">Es «Escribir precio» de Chekash, con la misma cuenta. Teclea un precio, pásalo a «Por kilo», suma el IVA y mira el total en dólares, euros y bolívares.</p>
+      <div class="rt">
+        <div class="rt-row">
+          <div class="seg2" role="group" aria-label="Moneda extranjera"><button type="button" data-for="usd" aria-pressed="true">Dólar</button><button type="button" data-for="eur" aria-pressed="false">Euro</button></div>
+          <div class="seg2" role="group" aria-label="Fuente del dólar"><button type="button" data-src="oficial" aria-pressed="true">BCV</button><button type="button" data-src="paralelo" aria-pressed="false">USDT</button></div>
         </div>
-        <div class="hint live" data-kilo-hint aria-live="off"></div>
-        <div class="chips" role="group" aria-label="Atajos de peso"><button class="chip" type="button" data-g="100" aria-pressed="false">100 g</button><button class="chip" type="button" data-g="250" aria-pressed="false">250 g</button><button class="chip" type="button" data-g="500" aria-pressed="true">500 g</button><button class="chip" type="button" data-g="1000" aria-pressed="false">1 kg</button></div>
+        <div class="rt-fields">
+          <label>Dólar<span class="in"><span>Bs.</span><input data-r="usd" inputmode="decimal" autocomplete="off" aria-label="Tasa del dólar en bolívares"></span></label>
+          <label>Euro<span class="in"><span>Bs.</span><input data-r="eur" inputmode="decimal" autocomplete="off" aria-label="Tasa del euro en bolívares"></span></label>
+        </div>
+        <p class="fine" data-rt-status role="status">Trayendo las tasas de hoy…</p>
       </div>
-
-      <div class="reads" aria-live="off">
-        <div class="read is-main ves" data-read="ves"><small>Bolívares</small><output class="num" for="c-price k-price k-qty">Bs. 1.301,43</output></div>
-        <div class="read usd" data-read="usd"><small>Dólares</small><output class="num">$1,45</output></div>
-        <div class="read eur" data-read="eur"><small>Euros</small><output class="num">€1,25</output></div>
-      </div>
-      <p class="sr" role="status" data-sr></p>
-
-      <div class="rates">
-        <div class="fld"><label for="r-usd">Dólar BCV (ejemplo)</label><div class="in-wrap"><span>Bs.</span><input id="r-usd" inputmode="decimal" autocomplete="off" maxlength="12" value="897,54"></div></div>
-        <div class="fld"><label for="r-eur">Euro BCV (ejemplo)</label><div class="in-wrap"><span>Bs.</span><input id="r-eur" inputmode="decimal" autocomplete="off" maxlength="12" value="1.041,15"></div></div>
-      </div>
+      <p class="cart" data-cart hidden><span data-cart-t></span><button type="button" data-cart-clear>Vaciar</button></p>
     </div>
+    <div class="pc-wrap"><span class="cm lock" aria-hidden="true"><i></i><i></i><i></i><i></i></span><div class="pc" data-pc></div></div>
   </div>
 </section>
 
@@ -340,5 +315,6 @@
 <script src="home.js?v=20261114" defer></script>
 <script src="evolucion.js?v=20261121" defer></script>
 <script src="lanzamiento.js?v=20261122" defer></script>
+<script src="calculadora.js?v=20261122" defer></script>
 </body>
 </html>
