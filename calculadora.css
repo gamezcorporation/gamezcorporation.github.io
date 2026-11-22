@@ -4,7 +4,7 @@
 .pc{container-type:inline-size}
 .pc-bezel{background:#0A0C0B;border-radius:12cqw;padding:2.4cqw;box-shadow:inset 0 0 0 1.5px #34443a,0 40px 70px -30px rgba(0,0,0,.55)}
 .pc-screen{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5em;height:49.5em;padding:1em;border-radius:10cqw;font-size:4cqw;color:#0A0C0B;background:linear-gradient(165deg,#F5F8F6 35%,#E2F4B5)}
-.pc-screen button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}
+:where(.pc-screen) button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;touch-action:manipulation}
 .pc-screen .i{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:.6em;margin-top:.2em}
 .hd h3{font-size:1.75em;letter-spacing:-.03em;margin-right:auto;margin-left:.1em}

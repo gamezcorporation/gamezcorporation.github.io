@@ -57,7 +57,7 @@
   const kp = $('[data-kp]');
   kp.innerHTML = ['1','2','3','4','5','6','7','8','9','L','0','del'].map(k => k === 'del'
     ? `<button type="button" class="dl" data-key="del" aria-label="Borrar (mantén para limpiar)"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h10a1 1 0 011 1v10a1 1 0 01-1 1H9l-5-6zM12 10l4 4M16 10l-4 4"/></svg></button>`
-    : `<button type="button" data-key="${k}"${k === 'L' ? ' data-left' : ''}></button>`).join('');
+    : `<button type="button" data-key="${k}"${k === 'L' ? ' data-left' : ''}>${k === 'L' ? '' : k}</button>`).join('');
   const q = s => $(s, root), qa = s => $$(s, root);
   let toastT;
   const toast = t => { const e = q('[data-toast]'); e.textContent = t; e.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => e.classList.remove('on'), 2600); };
