@@ -1,10 +1,5 @@
-EVOLUCION 21 nov 2026 (inicio oscuro, seccion Factura con IA, cinta, planes y preguntas actualizados)
-Archivos NUEVOS o CAMBIADOS (repo gamezcorporation.github.io, en la raiz): index.html, evolucion.css, evolucion.js, og-image.png, LEEME.txt.
-site.css, home.css, home.js y site.js NO cambiaron. Para volver al diseno anterior: restaura el index.html anterior (evolucion.css/js quedan sin usarse).
-Las paginas legales (repo Chekash) no cambian con este paquete.
-
-PAQUETE 1 de 2: va en el repo gamezcorporation.github.io (la raiz de tu pagina)
-Sube TODO lo que hay aqui (index.html, logo.svg, og-image.png, favicon-32.png, apple-touch-icon.png y la carpeta assets).
-Reemplaza index.html y logo.svg. NO toques app-ads.txt, README.md ni google09c8c0db5a83ed85.html.
-Los enlaces a la politica y a los terminos apuntan a /Chekash/..., asi que esas URLs no cambian.
-Cuando publiques en Google Play: pon el enlace en PLAY_URL al inicio de assets/site.js.
+LANZAMIENTO 22 nov 2026 (Chekash ya esta en Google Play)
+PAQUETE 1 de 2: repo gamezcorporation.github.io, en la raiz. Archivos NUEVOS o CAMBIADOS: index.html, lanzamiento.css, lanzamiento.js, site.js, sitemap.xml, LEEME.txt.
+Todo lo demas (evolucion.css/js, home.*, og-image.png, assets) queda igual.
+Los botones llevan &referrer=utm_...: en Play Console > Informes de adquisicion ves cuantas instalaciones vienen del boton (utm_medium=landing) y del QR (utm_medium=qr).
+Para volver al diseno anterior: restaura el index.html y site.js anteriores.

@@ -7,7 +7,7 @@
      Google Play (https://play.google.com/store/apps/details?id=com.chekash.app).
      Con eso, todos los avisos de «próximamente» pasan solos a «Descargar».
      ------------------------------------------------------------------ */
-  const PLAY_URL = '';
+  const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.chekash.app&referrer=utm_source%3Dweb%26utm_medium%3Dlanding';
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
